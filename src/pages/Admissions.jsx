@@ -31,9 +31,9 @@ const Admissions = ({ setPage }) => {
   const SCHEME_FEATURES = [
     { icon: "📚", title: "किताबें मुफ्त", sub: "Books FREE", desc: "3 साल की फीस भरने पर सभी किताबें निःशुल्क / All textbooks provided free for 3 years" },
     { icon: "👕", title: "यूनिफार्म मुफ्त", sub: "Uniform FREE", desc: "स्कूल यूनिफार्म प्रतिवर्ष मुफ्त / School uniform provided free every year" },
-    { icon: "🤖", title: "Robotics", desc: "Build real robots — problem solving and innovation skills" },
-    { icon: "🧠", title: "AI — Artificial Intelligence", desc: "New jobs, new technology, and future readiness from early classes" },
-    { icon: "📡", title: "IoT — Internet of Things", desc: "Smart home, smart devices — connected world skills" },
+    { icon: "💻", title: "Computer Science", desc: "Digital systems, typing layouts, and software basics training" },
+    { icon: "🔬", title: "Creative Science Labs", desc: "Practical science experiments to build strong foundational concept clarity" },
+    { icon: "🧩", title: "Logic & Block Programming", desc: "Fostering analytical thinking via Scratch visual block coding modules" },
     { icon: "💻", title: "Digital Learning", desc: "Smart class with internet-level digital teaching for bright future" },
     { icon: "⚽", title: "Sports", desc: "Physical education, team sports, and character development" },
     { icon: "🏛️", title: "Mission IAS / NDA", desc: "Foundation coaching for Civil Services & Defence from junior classes" },

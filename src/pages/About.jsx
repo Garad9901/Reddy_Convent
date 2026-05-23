@@ -59,7 +59,7 @@ const About = () => {
               </p>
 
               <p style={{ color: "#475569", fontSize: 15, lineHeight: 1.85, marginBottom: 24 }}>
-                With programs like <strong style={{ color: "#4a148c" }}>Mission IAS</strong>, <strong style={{ color: "#4a148c" }}>NDA Defence Academy</strong> coaching, and cutting-edge <strong style={{ color: "#4a148c" }}>AI, IoT & Robotics</strong> labs, we prepare our students for every career path — from civil services to armed forces, from technology to entrepreneurship.
+                With programs like <strong style={{ color: "#4a148c" }}>Mission IAS</strong>, <strong style={{ color: "#4a148c" }}>NDA Defence Academy</strong> coaching, and comprehensive <strong style={{ color: "#4a148c" }}>Computer &amp; Creative Science</strong> Laboratories, we prepare our students for every career path — from civil services to armed forces, from modern computing to entrepreneurship.
               </p>
 
               {/* Quick metrics */}
@@ -143,9 +143,9 @@ const About = () => {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
             {[
               { icon: "🏛️", title: "CBSE Curriculum", desc: "Nursery to 12th Std. with structured academic approach following CBSE guidelines for holistic student development." },
-              { icon: "🧠", title: "AI & Artificial Intelligence", desc: "Introducing students to the world of AI — new technology, new jobs, and preparing them for the digital future." },
-              { icon: "📡", title: "IoT — Internet of Things", desc: "Smart devices, connected world — students learn how IoT technology works through hands-on projects." },
-              { icon: "🤖", title: "Robotics", desc: "Building real robots from scratch — developing problem-solving, creativity and innovation skills." },
+              { icon: "💻", title: "Computer Science & ICT", desc: "Fostering early digital literacy, keyboard training, MS Office software, and internet safety modules." },
+              { icon: "🔬", title: "Logical Science Labs", desc: "Hands-on science experiments mapping physical, chemical, and biological concepts to build strong fundamentals." },
+              { icon: "🧩", title: "Creative Coding Basics", desc: "Learning core logical thinking steps using simple Scratch block coding interfaces to create interactive stories." },
               { icon: "💻", title: "Digital Learning", desc: "Smart classrooms with internet-enabled digital teaching for interactive and engaging learning experience." },
               { icon: "🏛️", title: "Mission IAS Foundation", desc: "UPSC/MPSC coaching foundation from early classes — IAS, IPS, IFS, PSI, STI, and more career pathways." },
               { icon: "⚔️", title: "NDA Defence Academy", desc: "Defence Forces preparation — Army, Navy, Air Force, Merchant Navy. NDA exam coaching for Class 11-12 students." },
@@ -204,7 +204,7 @@ const About = () => {
             {[
               { i: "🎯", v: "Academic Excellence", d: "Dedicated to building strong academic foundations with CBSE curriculum and conceptual clarity from Nursery to 12th." },
               { i: "🤝", v: "Integrity & Discipline", d: "Building core values of honesty, respect, and accountability — shaping responsible citizens of tomorrow." },
-              { i: "💡", v: "Innovation & Technology", d: "Preparing students for the future with AI, IoT, Robotics and Digital Learning from early classes." },
+              { i: "💡", v: "Innovation & Technology", d: "Preparing students for the future with Computer Education, Creative Science, and Digital Learning from early classes." },
               { i: "🌱", v: "Holistic Development", d: "Nurturing growth through sports, yoga, cultural programs, and social-emotional learning alongside academics." },
               { i: "🇮🇳", v: "Nation Building", d: "Mission IAS and NDA programs inspire students to serve the nation through civil services and defence forces." },
               { i: "❤️", v: "Warm Community", d: "\"घर से दूर, एक सुन्दर घर\" — A beautiful home away from home where every student belongs." }

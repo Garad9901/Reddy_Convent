@@ -475,3 +475,108 @@ label {
     gap: 20px;
   }
 }
+
+/* ══════════ HUMAN DESIGN SYSTEM CLASS UTILITIES ══════════ */
+
+/* Premium Academic Card */
+.school-card {
+  background: var(--white);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--rad);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  padding: 28px;
+  color: #1e293b;
+  transition: var(--trans);
+}
+.school-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(74, 20, 140, 0.08);
+  border-color: var(--gold);
+}
+
+/* Styled Principal Letterhead */
+.letterhead-card {
+  background: var(--white);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--rad);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  padding: 50px 40px;
+  position: relative;
+  overflow: hidden;
+  color: #334155;
+}
+
+.letterhead-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4a148c, #7b1fa2, #FFB800);
+}
+
+/* Asymmetric Split Layout */
+.asymmetric-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .asymmetric-split {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+}
+
+/* Traditional Badge Tag */
+.traditional-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fdf4ff;
+  color: #7b1fa2;
+  border: 1.5px solid #e9d5ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* Parent Helpdesk Styles */
+.helpdesk-header {
+  background: linear-gradient(135deg, #4a148c, #7b1fa2);
+  padding: 16px 20px;
+  color: var(--white);
+}
+
+.helpdesk-body {
+  height: 250px;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f8fafc;
+}
+
+.helpdesk-chip {
+  background: #f3e5f5;
+  border: 1px solid #ce93d8;
+  color: #7b1fa2;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 11.5px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--trans);
+}
+.helpdesk-chip:hover {
+  background: #7b1fa2;
+  color: var(--white);
+  border-color: #7b1fa2;
+}
+

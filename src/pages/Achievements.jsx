@@ -39,15 +39,15 @@ const EXCELLENCE_CATEGORIES = [
     ]
   },
   {
-    icon: "🤖",
-    title: "AI, IoT & Robotics Innovation",
+    icon: "💻",
+    title: "Computer Science & Exhibitions",
     cat: "Technology",
-    desc: "Hands-on technology projects building autonomous physical rover platforms and internet-connected smart systems.",
+    desc: "Hands-on computer training, logical block coding, and practical science models to foster healthy computational thinking.",
     milestones: [
-      "Arduino and basic hardware breadboard integration",
-      "Visual scratch and basic coding programming courses",
-      "Annual school-wide tech innovation exhibitions",
-      "Building conceptual knowledge of modern digital tools"
+      "Foundational computer operating systems and typing layouts",
+      "Visual Scratch coding blocks to create interactive stories",
+      "Annual school-wide science and computer model exhibitions",
+      "Building practical understanding of modern digital tools"
     ]
   },
   {
@@ -89,7 +89,7 @@ const HISTORICAL_MILESTONES = [
   { year: "2015", title: "Mission IAS Launched", desc: "Pioneered the flagship civil services foundation coaching program to cultivate early general awareness and reasoning." },
   { year: "2019", title: "NDA & Junior College Addition", desc: "Added Higher Secondary standard (Science stream) and NDA training drills, providing solid local career pathways." },
   { year: "2023", title: "Digital Smart Classrooms", desc: "Fully modernized all school learning zones with digital interactive smart board displays." },
-  { year: "2026", title: "AI, IoT & Robotics Laboratory", desc: "Inaugurated our integrated tech laboratory workstations for electronics, coding, and physical computing." }
+  { year: "2026", title: "Computer Science Laboratory", desc: "Inaugurated our fully modernized Computer Science & Creative Coding workstations." }
 ];
 
 const CATEGORIES = ["All", "Academics", "Career Pathways", "Technology", "Co-curricular"];

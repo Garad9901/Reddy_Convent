@@ -17,11 +17,11 @@ const FACILITIES_DATA = [
     specs: ["Digital Smart Board displays", "Ergonomic, modular seating setups", "Broadband internet-linked teaching resources", "Large, well-lit learning environments"]
   },
   { 
-    icon: "🤖", 
-    name: "AI, IoT & Robotics Lab", 
-    desc: "A pioneering technology sandbox equipped with electronics, microcontrollers, and coding resources to build real-world systems.",
-    fullDesc: "Aligning with the national push for digital literacy, our state-of-the-art Computer and Innovation Lab teaches students the fundamentals of Artificial Intelligence (AI), Internet of Things (IoT), and Robotics from early standards. Students work with simple hardware boards, sensors, and visual coding blocks to create physical computing projects.",
-    specs: ["Arduino & basic electronics kits", "Structured AI & Coding curriculum", "Modern computer terminals", "Robotics prototyping workstations"]
+    icon: "💻", 
+    name: "Computer Science & Technology Lab", 
+    desc: "A modern computing sandbox equipped with up-to-date terminals, keyboard drills, and programming packages.",
+    fullDesc: "Aligning with the national push for digital literacy, our fully equipped Computer and Technology Lab teaches students the fundamentals of computing, software systems, and visual Scratch programming from early standards. Students work with modern terminals, learning typing, office applications, and basic logical circuits.",
+    specs: ["Modern personal computer terminals", "Structured ICT & Coding curriculum", "Visual Scratch coding workstations", "Basic hardware and science experiment sets"]
   },
   { 
     icon: "🔬", 

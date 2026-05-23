@@ -25,8 +25,8 @@ const AdmissionsPopup = ({ onClose, onNavigate }) => {
               {[
                 { icon: "📚", text: "किताबें मुफ्त\nBooks FREE" },
                 { icon: "👕", text: "यूनिफार्म मुफ्त\nUniform FREE" },
-                { icon: "🤖", text: "Robotics\nCourse" },
-                { icon: "🧠", text: "AI + IoT\nLearning" },
+                { icon: "💻", text: "कंप्यूटर शिक्षा\nComputer Class" },
+                { icon: "🔬", text: "विज्ञान प्रयोगशाला\nScience Lab" },
               ].map((f, i) => (
                 <div key={i} style={{ background: "#fff", border: "1px solid #e9d5ff", borderRadius: 6, padding: "10px", textAlign: "center" }}>
                   <div style={{ fontSize: 20 }}>{f.icon}</div>

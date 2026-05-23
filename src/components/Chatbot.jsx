@@ -4,32 +4,35 @@ import { SCHOOL } from "../App";
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
   const [msgs, setMsgs] = useState([
-    { from: "bot", text: "👋 Welcome to Smt. Rajeshwari Reddy Scholar Convent, Kodamendhi! I am your digital assistant. How can I help you today?" }
+    {
+      from: "counselor",
+      text: "👋 Namaste! Welcome to Smt. Rajeshwari Reddy Scholar Convent, Kodamendhi.\n\nI am Mrs. Sharda Garad, your Parent Help Desk counselor. How can I assist you with your child's education today?"
+    }
   ]);
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
 
-  const FAQS = {
-    admission: `🎓 Admissions for the 2026-27 academic session are open!\n\nClasses: Nursery, KG-1, KG-2 to 12th Std.\nCurriculum: CBSE\n\n📞 Call for enquiry: ${SCHOOL.admissionPhone}\n\nSpecial: त्रिवर्षीय शिक्षा समृद्धि योजना — 3 साल की फीस पर किताबें और यूनिफार्म मुफ्त! Only 111 seats available.`,
-    fees: `💰 We offer a special 3-year payment scheme:\n\n• Pay 3 years' fees at once\n• Get FREE textbooks every year\n• Get FREE uniform every year\n• AI, IoT & Robotics classes included\n• No fee increase for 3 years guaranteed\n\nFor detailed fee structure, please contact:\n📞 ${SCHOOL.phone1} or ${SCHOOL.phone2}`,
-    ias: `🏛️ Mission I.A.S — Student Career Development Program\n\n"Foundation for Bright Future — Pay Back to Society"\n\nUPSC Pathway: IAS, IPS, IFS, IRS\nMPSC Pathway: PSI, STI, ASO, BEO, Talathi, SDO, BDO\nDefence Forces: CRPF, BSF, CISF, SRPF, RPF, Army\n\nCoaching foundation begins from junior classes.`,
-    nda: `⚔️ NDA — National Defence Academy Preparation\n\n"Defence Force as an Officer"\n\n• Army  ⚔️\n• Air Force  ✈️\n• Navy  ⚓\n• Merchant Navy  🚢\n\nNDA is a national-level exam conducted by UPSC twice a year. Eligible after Class 12. Written test (Maths & General Ability) + SSB Interview.`,
-    contact: `📞 Contact Information:\n\n📍 Address: Kodamendhi, Nagpur District, Maharashtra\n📞 ${SCHOOL.phone1}\n📞 ${SCHOOL.phone2}\n📞 ${SCHOOL.admissionPhone} (Admissions)\n📞 ${SCHOOL.phone4}\n✉️ ${SCHOOL.email}\n\nUDISE: ${SCHOOL.udise} | Index: ${SCHOOL.index}`,
-    facilities: `🏫 Our Campus & Facilities:\n\n• Multi-storey school building\n• Spacious playground & sports ground\n• School bus transport facility\n• Smart classrooms with digital learning\n• AI & Robotics lab\n• IoT (Internet of Things) lab\n• Library\n• Yoga & wellness sessions\n• Cultural programs & stage performances\n• Beautiful garden & landscaping`,
-    scheme: `📚 त्रिवर्षीय शिक्षा समृद्धि योजना\n"Where Education Meets Innovation & Excellence"\n\n✅ 3 साल की फीस एक साथ भरने पर:\n• किताबें बिल्कुल मुफ्त (Books FREE)\n• यूनिफार्म बिल्कुल मुफ्त (Uniform FREE)\n• AI + IoT + Robotics included\n• Digital Learning included\n• Sports included\n\n🔢 Only 111 seats available!\n📞 Call: ${SCHOOL.admissionPhone}`,
-    default: `✨ Thank you for your interest in S.R.R. Scholar Convent!\n\nFor any queries, you can:\n📞 Call: ${SCHOOL.phone1} / ${SCHOOL.phone2}\n📞 Admissions: ${SCHOOL.admissionPhone}\n✉️ Email: ${SCHOOL.email}\n\nOr visit our school at Kodamendhi.`
+  const HELPDESK_ANSWERS = {
+    admission: `🎓 **Admissions Session 2026-27** are active!\n\n• **Standard Blocks**: Nursery, KG-1, KG-2 to 12th Std.\n• **Syllabus Standards**: CBSE Aligned.\n\n📞 Directly speak to my desk: **${SCHOOL.admissionPhone}**\n\n💡 *Special Program*: Our **3-Year Shiksha Samriddhi Scheme** includes completely free textbooks and uniforms! (Only 111 seats available).`,
+    fees: `💰 **School Tuition & Fee Options**:\n\n• We offer highly affordable monthly and term-wise payment cycles for local rural families.\n• **Shiksha Samriddhi Program**: Pay 3 years' fees upfront and lock in 0% fee hikes + receive absolutely FREE textbooks & uniforms every year.\n\nFor standard Class-wise breakdown details:\n📞 Please call office: **${SCHOOL.phone1}** or **${SCHOOL.phone2}**`,
+    ias: `🏛️ **Mission I.A.S Civil Services Foundation**:\n\n• This is our custom developmental foundation track focusing on general knowledge, reading speed, aptitude, and geography basics early in standard.\n• Prepares local boys and girls to lead and pay back to society through UPSC / MPSC pathways.`,
+    nda: `⚔️ **NDA (National Defence Academy) Academy**:\n\n• Inspires standard 11th and 12th Science students to prepare as officers for standard commission entries (Army, Navy, Air Force).\n• Integrates systematic physical training, agility tests, general stamina building, and SSB interview guidance.`,
+    contact: `📞 **Admissions & Office Helplines**:\n\n📍 **Campus Address**: Kodamendhi, Nagpur District, Maharashtra\n• **General Admissions**: ${SCHOOL.phone3}\n• **Administrative Office**: ${SCHOOL.phone1}\n• **Principal Room Line**: ${SCHOOL.phone4}\n✉️ **Direct Email**: ${SCHOOL.email}\n\n🏫 UDISE: ${SCHOOL.udise} | Index: ${SCHOOL.index}`,
+    facilities: `🏫 **Convent Campus Infrastructure**:\n\n• Multi-storey academic school building\n• Spanning green playground & volleyball arena\n• School bus fleet transport serving rural sectors\n• Digital Smart Classrooms with smart boards\n• Modern Computer Lab (Scratch visual coding & basics)\n• Composite Science Lab & Library Hub\n• Yoga & Daily morning Assembly grounds`,
+    scheme: `📚 **त्रिवर्षीय शिक्षा समृद्धि योजना**\n\n✅ 3 वर्ष का शुल्क एकमुश्त जमा करने पर:\n• **किताबें बिल्कुल मुफ्त** (Textbooks FREE every year)\n• **यूनिफार्म बिल्कुल मुफ्त** (Uniform FREE every year)\n• Computer, technology, and sports courses fully included.\n\n🔢 **केवल 111 सीटें उपलब्ध हैं!**\n📞 Call admissions registrar: **${SCHOOL.admissionPhone}**`,
+    default: `✨ Thank you for checking in with our parent help desk!\n\nFor standard admission booklets or to book a campus tour:\n📞 Call directly: **${SCHOOL.phone1}** / **${SCHOOL.phone3}**\n✉️ Email: **${SCHOOL.email}**\n\nWe look forward to welcoming your family!`
   };
 
-  const getReply = (text) => {
+  const getResponse = (text) => {
     const clean = text.toLowerCase();
-    if (clean.includes("admiss") || clean.includes("apply") || clean.includes("register") || clean.includes("seat")) return FAQS.admission;
-    if (clean.includes("fee") || clean.includes("cost") || clean.includes("price") || clean.includes("payment")) return FAQS.fees;
-    if (clean.includes("ias") || clean.includes("upsc") || clean.includes("mpsc") || clean.includes("civil service") || clean.includes("mission")) return FAQS.ias;
-    if (clean.includes("nda") || clean.includes("defence") || clean.includes("defense") || clean.includes("army") || clean.includes("navy") || clean.includes("air force")) return FAQS.nda;
-    if (clean.includes("contact") || clean.includes("phone") || clean.includes("call") || clean.includes("address") || clean.includes("email") || clean.includes("location")) return FAQS.contact;
-    if (clean.includes("facil") || clean.includes("lab") || clean.includes("sport") || clean.includes("library") || clean.includes("bus") || clean.includes("campus") || clean.includes("building")) return FAQS.facilities;
-    if (clean.includes("scheme") || clean.includes("योजना") || clean.includes("free") || clean.includes("मुफ्त") || clean.includes("book") || clean.includes("uniform") || clean.includes("111")) return FAQS.scheme;
-    return FAQS.default;
+    if (clean.includes("admiss") || clean.includes("apply") || clean.includes("register") || clean.includes("seat")) return HELPDESK_ANSWERS.admission;
+    if (clean.includes("fee") || clean.includes("cost") || clean.includes("price") || clean.includes("payment")) return HELPDESK_ANSWERS.fees;
+    if (clean.includes("ias") || clean.includes("upsc") || clean.includes("mpsc") || clean.includes("civil service") || clean.includes("mission")) return HELPDESK_ANSWERS.ias;
+    if (clean.includes("nda") || clean.includes("defence") || clean.includes("defense") || clean.includes("army") || clean.includes("navy") || clean.includes("air force")) return HELPDESK_ANSWERS.nda;
+    if (clean.includes("contact") || clean.includes("phone") || clean.includes("call") || clean.includes("address") || clean.includes("email") || clean.includes("location")) return HELPDESK_ANSWERS.contact;
+    if (clean.includes("facil") || clean.includes("lab") || clean.includes("sport") || clean.includes("library") || clean.includes("bus") || clean.includes("campus") || clean.includes("building")) return HELPDESK_ANSWERS.facilities;
+    if (clean.includes("scheme") || clean.includes("योजना") || clean.includes("free") || clean.includes("मुफ्त") || clean.includes("book") || clean.includes("uniform") || clean.includes("111")) return HELPDESK_ANSWERS.scheme;
+    return HELPDESK_ANSWERS.default;
   };
 
   const handleSend = () => {
@@ -38,14 +41,14 @@ const Chatbot = () => {
     setInput("");
     setMsgs((m) => [...m, { from: "user", text: userMsg }]);
     setTimeout(() => {
-      setMsgs((m) => [...m, { from: "bot", text: getReply(userMsg) }]);
+      setMsgs((m) => [...m, { from: "counselor", text: getResponse(userMsg) }]);
     }, 600);
   };
 
   const handleQuickTag = (tag) => {
     setMsgs((m) => [...m, { from: "user", text: tag }]);
     setTimeout(() => {
-      setMsgs((m) => [...m, { from: "bot", text: getReply(tag) }]);
+      setMsgs((m) => [...m, { from: "counselor", text: getResponse(tag) }]);
     }, 500);
   };
 
@@ -59,34 +62,28 @@ const Chatbot = () => {
     <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 1100 }}>
       {open && (
         <div
-          className="glass-dark animate-scaleIn"
+          className="animate-scaleIn"
           style={{
             position: "absolute",
             bottom: 74,
             right: 0,
-            width: 340,
-            borderRadius: 20,
+            width: 350,
+            borderRadius: 16,
             overflow: "hidden",
-            boxShadow: "var(--shadow-lg), 0 0 30px rgba(0, 0, 0, 0.5)",
-            border: "1px solid rgba(123, 31, 162, 0.35)"
+            boxShadow: "0 10px 40px rgba(74,20,140,0.15)",
+            border: "1px solid #cbd5e1",
+            background: "#fff"
           }}
         >
-          {/* Header */}
-          <div
-            style={{
-              background: "linear-gradient(135deg, #4a148c, #7b1fa2)",
-              padding: "16px 20px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center"
-            }}
-          >
-            <div>
-              <div style={{ fontWeight: 800, color: "#fff", fontSize: 15, display: "flex", alignItems: "center", gap: 6 }}>
-                <span>🤖</span> SRR Assistant
-              </div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>
-                ● Online Support
+          {/* Header styled as traditional parent support desk */}
+          <div className="helpdesk-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <span style={{ fontSize: 24 }}>👩‍💼</span>
+              <div>
+                <div style={{ fontWeight: 800, color: "#fff", fontSize: 14 }}>Mrs. Sharda Garad</div>
+                <div style={{ fontSize: 10.5, color: "#FFB800", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5 }}>
+                  Senior admissions Help Desk
+                </div>
               </div>
             </div>
             <button
@@ -95,10 +92,10 @@ const Chatbot = () => {
                 background: "rgba(255, 255, 255, 0.15)",
                 border: "none",
                 color: "#fff",
-                fontSize: 20,
+                fontSize: 16,
                 cursor: "pointer",
-                width: 28,
-                height: 28,
+                width: 26,
+                height: 26,
                 borderRadius: "50%",
                 display: "flex",
                 alignItems: "center",
@@ -106,38 +103,28 @@ const Chatbot = () => {
                 fontWeight: "bold"
               }}
             >
-              ×
+              ✕
             </button>
           </div>
 
           {/* Messages Body */}
-          <div
-            style={{
-              height: 250,
-              overflowY: "auto",
-              padding: 16,
-              display: "flex",
-              flexDirection: "column",
-              gap: 12,
-              background: "rgba(4, 13, 30, 0.4)"
-            }}
-          >
+          <div className="helpdesk-body">
             {msgs.map((m, i) => (
               <div
                 key={i}
                 style={{
                   alignSelf: m.from === "user" ? "flex-end" : "flex-start",
                   maxWidth: "85%",
-                  background: m.from === "user" ? "linear-gradient(135deg, #7b1fa2, #9c27b0)" : "rgba(255, 255, 255, 0.08)",
-                  color: "#fff",
+                  background: m.from === "user" ? "linear-gradient(135deg, #7b1fa2, #9c27b0)" : "#fff",
+                  color: m.from === "user" ? "#fff" : "#1e293b",
                   padding: "10px 14px",
-                  borderRadius: m.from === "user" ? "16px 16px 0 16px" : "16px 16px 16px 0",
-                  fontSize: 13.5,
-                  lineHeight: 1.5,
+                  borderRadius: m.from === "user" ? "14px 14px 0 14px" : "14px 14px 14px 0",
+                  fontSize: 13,
+                  lineHeight: 1.55,
                   whiteSpace: "pre-line",
-                  boxShadow: m.from === "user" ? "0 4px 10px rgba(123, 31, 162, 0.25)" : "none",
-                  border: m.from === "bot" ? "1px solid rgba(255, 255, 255, 0.04)" : "none",
-                  animation: "fadeIn 0.3s ease forwards"
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                  border: m.from === "counselor" ? "1px solid #e2e8f0" : "none",
+                  animation: "fadeIn 0.25s ease forwards"
                 }}
               >
                 {m.text}
@@ -146,78 +133,100 @@ const Chatbot = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Prompt chips */}
+          {/* Traditional Inquiry Quick Links */}
           <div
             style={{
-              padding: "10px 14px 4px",
+              padding: "12px 14px 6px",
               display: "flex",
               flexWrap: "wrap",
-              gap: 8,
-              borderTop: "1px solid rgba(255, 255, 255, 0.05)",
-              background: "rgba(4, 13, 30, 0.6)"
+              gap: 6,
+              borderTop: "1px solid #cbd5e1",
+              background: "#f8fafc"
             }}
           >
-            {["Admissions", "Fees", "Mission IAS", "NDA Defence", "Facilities"].map((q) => (
+            {["Admissions", "Fees", "Mission IAS", "NDA Academy", "School Scheme"].map((q) => (
               <button
                 key={q}
                 onClick={() => handleQuickTag(q)}
-                style={{
-                  background: "rgba(123, 31, 162, 0.12)",
-                  border: "1px solid rgba(123, 31, 162, 0.35)",
-                  color: "#ce93d8",
-                  borderRadius: 20,
-                  padding: "5px 12px",
-                  fontSize: 11,
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  transition: "var(--trans)"
-                }}
-                onMouseOver={(e) => {
-                  e.target.style.background = "rgba(123, 31, 162, 0.25)";
-                  e.target.style.borderColor = "#9c27b0";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.background = "rgba(123, 31, 162, 0.12)";
-                  e.target.style.borderColor = "rgba(123, 31, 162, 0.35)";
-                }}
+                className="helpdesk-chip"
+                style={{ border: "1px solid #cbd5e1" }}
               >
                 {q}
               </button>
             ))}
           </div>
 
-          {/* Form input */}
+          {/* Quick Helpline triggers */}
+          <div style={{ padding: "6px 14px", background: "#f1f5f9", display: "flex", gap: 8, borderTop: "1px solid #cbd5e1" }}>
+            <a
+              href={`tel:${SCHOOL.admissionPhone}`}
+              style={{
+                flex: 1,
+                background: "#7b1fa2",
+                color: "#fff",
+                textDecoration: "none",
+                padding: "8px",
+                borderRadius: 8,
+                fontSize: 11.5,
+                fontWeight: 700,
+                textAlign: "center"
+              }}
+            >
+              📞 Call Office
+            </a>
+            <a
+              href={`https://wa.me/91${SCHOOL.admissionPhone}?text=Hello%20Mrs.%20Sharda%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20SRR%20Convent`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                flex: 1,
+                background: "#16a34a",
+                color: "#fff",
+                textDecoration: "none",
+                padding: "8px",
+                borderRadius: 8,
+                fontSize: 11.5,
+                fontWeight: 700,
+                textAlign: "center"
+              }}
+            >
+              💬 WhatsApp Us
+            </a>
+          </div>
+
+          {/* Input Box */}
           <div
             style={{
               display: "flex",
-              padding: 12,
-              gap: 8,
-              background: "rgba(4, 13, 30, 0.6)"
+              padding: 10,
+              gap: 6,
+              background: "#fff",
+              borderTop: "1px solid #cbd5e1"
             }}
           >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
-              placeholder="Ask a question..."
+              placeholder="Type your enquiry..."
               style={{
                 flex: 1,
-                background: "rgba(255, 255, 255, 0.06)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderRadius: 10,
-                padding: "8px 12px",
-                color: "#fff",
-                fontSize: 13,
+                background: "#f1f5f9 !important",
+                border: "1.5px solid #cbd5e1 !important",
+                borderRadius: 8,
+                padding: "6px 10px",
+                color: "#1e293b",
+                fontSize: 12.5,
                 outline: "none"
               }}
             />
             <button
               onClick={handleSend}
               style={{
-                padding: "8px 14px",
-                borderRadius: 10,
-                fontSize: 13,
-                background: "linear-gradient(135deg,#4a148c,#7b1fa2)",
+                padding: "6px 12px",
+                borderRadius: 8,
+                fontSize: 12.5,
+                background: "#7b1fa2",
                 color: "#fff",
                 border: "none",
                 fontWeight: 700,
@@ -234,24 +243,24 @@ const Chatbot = () => {
       <button
         onClick={() => setOpen(!open)}
         style={{
-          width: 60,
-          height: 60,
+          width: 56,
+          height: 56,
           borderRadius: "50%",
           background: "linear-gradient(135deg, #7b1fa2, #9c27b0)",
           border: "none",
           cursor: "pointer",
-          fontSize: 26,
+          fontSize: 24,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 8px 30px rgba(123, 31, 162, 0.4), 0 0 20px rgba(123, 31, 162, 0.3)",
+          boxShadow: "0 6px 20px rgba(123, 31, 162, 0.3)",
           animation: open ? "none" : "pulse 2.2s infinite, float 5s ease-in-out infinite",
-          transition: "transform 0.2s"
+          transition: "transform 0.15s"
         }}
-        onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.08)"}
+        onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.05)"}
         onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
       >
-        💬
+        📞
       </button>
     </div>
   );

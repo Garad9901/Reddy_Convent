@@ -19,7 +19,7 @@ const useCounter = (target, active) => {
 const NOTICES = [
   { date: "20 May 2026", text: "Admission forms available at school office & online. Call 8208069609 for enquiry.", type: "Admissions", urgent: true },
   { date: "15 May 2026", text: "त्रिवर्षीय शिक्षा समृद्धि योजना — केवल 111 सीटें शेष। अंतिम तिथि: 11/05/2026", type: "योजना", urgent: true },
-  { date: "10 May 2026", text: "AI, IoT, and Robotics lab sessions begin for Class 6th onwards from June 2026.", type: "Academic" },
+  { date: "10 May 2026", text: "Computer lab and science practical sessions begin for Class 5th onwards from June 2026.", type: "Academic" },
   { date: "05 May 2026", text: "Parent-Teacher Meeting for Classes 5th–8th on June 5, 2026 at 10:00 AM.", type: "General" },
   { date: "01 May 2026", text: "Mission IAS Aptitude Workshop — Registration open for Classes 9th–12th.", type: "Academic" },
   { date: "28 Apr 2026", text: "NDA Defence Academy orientation session scheduled for interested Class 11-12 students.", type: "Defence" },
@@ -27,7 +27,7 @@ const NOTICES = [
 
 const TESTIMONIALS = [
   {
-    quote: "Smt. Rajeshwari Reddy Scholar Convent has changed how our children learn. The AI and Robotics sessions are practical, not just in textbooks! We are very happy with the discipline.",
+    quote: "Smt. Rajeshwari Reddy Scholar Convent has changed how our children learn. The computer education and science lab sessions are very practical and helpful! We are highly satisfied.",
     author: "Mr. Anil Deshmukh",
     address: "Mouda, Nagpur Rural",
     role: "Parent of Grade 7 Student",
@@ -160,7 +160,7 @@ const Home = ({ setPage }) => {
               </h2>
               
               <p style={{ color: "#475569", fontSize: "15.5px", lineHeight: 1.8, marginBottom: 28, maxWidth: 560 }}>
-                Providing a modern, safe, and academically rigorous environment. Inspiring rural scholars from Nursery to 12th standard with pioneering programs in <strong>AI, IoT, Robotics</strong>, and foundation coaching for the <strong>Mission IAS & NDA</strong> academies.
+                Providing a modern, safe, and academically rigorous environment. Inspiring rural scholars from Nursery to 12th standard with pioneering programs in <strong>Computer Education &amp; Creative Coding</strong>, and foundation coaching for the <strong>Mission IAS &amp; NDA</strong> academies.
               </p>
 
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -458,7 +458,7 @@ const Home = ({ setPage }) => {
               </div>
               <div style={{ padding: "14px 16px" }}>
                 <div style={{ color: "#1e293b", fontSize: 13, lineHeight: 1.65 }}>
-                  {["📚 किताबें बिल्कुल मुफ्त", "👕 यूनिफार्म बिल्कुल मुफ्त", "💰 3 साल की फीस एक साथ", "🔢 केवल 111 सीटें उपलब्ध", "🤖 AI + IoT + Robotics included"].map((f, i) => (
+                  {["📚 किताबें बिल्कुल मुफ्त", "👕 यूनिफार्म बिल्कुल मुफ्त", "💰 3 साल की फीस एक साथ", "🔢 केवल 111 सीटें उपलब्ध", "💻 कंप्यूटर एवं कोडिंग क्लासेज शामिल"].map((f, i) => (
                     <div key={i} style={{ padding: "5px 0", borderBottom: i < 4 ? "1px solid #f1f5f9" : "none", fontWeight: 600, color: i === 3 ? "#c0392b" : "#1e293b" }}>{f}</div>
                   ))}
                 </div>

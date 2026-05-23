@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SCHOOL } from "../App";
-import { saveContact } from "../firebase";
+import { saveContact } from "../mongodb";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });

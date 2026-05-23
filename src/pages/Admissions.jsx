@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SCHOOL } from "../App";
-import { saveAdmission } from "../firebase";
+import { saveAdmission } from "../mongodb";
 
 const Admissions = ({ setPage }) => {
   const [form, setForm] = useState({ name: "", parent: "", phone: "", class: "", village: "" });

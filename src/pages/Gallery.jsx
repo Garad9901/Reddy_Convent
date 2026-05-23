@@ -12,9 +12,14 @@ const PHOTOS = [
   { src: "/classroom.png", title: "Smart Classroom", cat: "Facilities", desc: "Digital interactive classrooms" },
   { src: "/robotics.png", title: "Robotics Lab", cat: "Facilities", desc: "Students building robots and learning AI" },
   { src: "/sports.png", title: "Sports Ground", cat: "Sports", desc: "Open grounds for cricket, football and athletics" },
+  { src: "/brochure_page_1.jpg", title: "Brochure - Front Cover", cat: "Brochure", desc: "Front cover of Smt. Rajeshwari Reddy Scholar Convent brochure" },
+  { src: "/brochure_page_2.jpg", title: "Brochure - Leadership & Vision", cat: "Brochure", desc: "Principal's message, management team, and academic goals" },
+  { src: "/brochure_page_3.jpg", title: "Brochure - Mission IAS & NDA", cat: "Brochure", desc: "Milestones for Civil Services foundation and Defence Academy courses" },
+  { src: "/brochure_page_4.jpg", title: "Brochure - Facilities & Sports", cat: "Brochure", desc: "Outline of smart classrooms, science labs, and athletics" },
+  { src: "/brochure_page_5.jpg", title: "Brochure - Admissions & Scheme", cat: "Brochure", desc: "Details on admissions enrollment and the three-year fee scheme" },
 ];
 
-const CATS = ["All", "Campus", "Students", "Facilities", "Sports", "Events"];
+const CATS = ["All", "Campus", "Students", "Facilities", "Sports", "Events", "Brochure"];
 
 const Gallery = () => {
   const [cat, setCat] = useState("All");

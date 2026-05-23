@@ -40,6 +40,8 @@ const Home = ({ setPage }) => {
   const [activeNotice, setActiveNotice] = useState("All");
   const [statsOn, setStatsOn] = useState(false);
   const statsRef = useRef();
+  const [brochureOpen, setBrochureOpen] = useState(false);
+  const [brochurePage, setBrochurePage] = useState(0);
 
   useEffect(() => {
     const ob = new IntersectionObserver(([e]) => { if (e.isIntersecting) setStatsOn(true); }, { threshold: 0.2 });
@@ -197,6 +199,30 @@ const Home = ({ setPage }) => {
                 </div>
                 <button onClick={() => setPage("Admissions")} style={{ width: "100%", background: "#7b1fa2", color: "#fff", border: "none", padding: "9px", borderRadius: 6, fontWeight: 700, fontSize: 12.5, cursor: "pointer", marginTop: 12 }}>
                   Know More →
+                </button>
+              </div>
+            </div>
+
+            {/* School Brochure Preview */}
+            <div style={{ background: "#fff", borderRadius: 10, border: "1px solid #e2e8f0", overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}>
+              <div style={{ background: "#7b1fa2", padding: "12px 16px" }}>
+                <h3 style={{ color: "#fff", fontSize: 13, fontWeight: 800 }}>📖 School Brochure 2026-27</h3>
+              </div>
+              <div style={{ padding: "16px", textAlign: "center" }}>
+                <div style={{ position: "relative", borderRadius: 6, overflow: "hidden", border: "1px solid #e2e8f0", marginBottom: 12, cursor: "pointer" }} onClick={() => { setBrochurePage(0); setBrochureOpen(true); }}>
+                  <img src="/brochure_page_1.jpg" alt="Brochure Cover" style={{ width: "100%", height: 160, objectFit: "cover" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(transparent 50%, rgba(0,0,0,0.8))", display: "flex", alignItems: "flex-end", justifyContent: "center", paddingBottom: 10 }}>
+                    <span style={{ color: "#FFB800", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.5 }}>Official Brochure</span>
+                  </div>
+                </div>
+                <p style={{ color: "#475569", fontSize: 12, lineHeight: 1.5, marginBottom: 14 }}>
+                  Browse the original brochure sheets detailing standard rules and guidelines.
+                </p>
+                <button 
+                  onClick={() => { setBrochurePage(0); setBrochureOpen(true); }} 
+                  style={{ width: "100%", background: "linear-gradient(135deg, #7b1fa2, #9c27b0)", color: "#fff", border: "none", padding: "10px", borderRadius: 6, fontWeight: 700, fontSize: 12.5, cursor: "pointer" }}
+                >
+                  View Brochure Pages →
                 </button>
               </div>
             </div>
@@ -401,6 +427,118 @@ const Home = ({ setPage }) => {
           ))}
         </div>
       </div>
+
+      {/* ══════ BROCHURE LIGHTBOX MODAL ══════ */}
+      {brochureOpen && (
+        <div 
+          onClick={() => setBrochureOpen(false)}
+          style={{ 
+            position: "fixed", 
+            inset: 0, 
+            zIndex: 9999, 
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            background: "rgba(0,0,0,0.92)", 
+            padding: 20 
+          }}
+        >
+          <div 
+            onClick={e => e.stopPropagation()} 
+            style={{ 
+              maxWidth: 720, 
+              width: "100%", 
+              borderRadius: 12, 
+              overflow: "hidden", 
+              background: "#1e293b",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+              border: "1px solid rgba(255, 255, 255, 0.1)"
+            }}
+          >
+            {/* Modal Header */}
+            <div style={{ background: "linear-gradient(135deg, #4a148c, #7b1fa2)", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 800 }}>📖 School Brochure — Page {brochurePage + 1} of 5</h3>
+                <span style={{ color: "#FFB800", fontSize: 10.5, fontWeight: 700 }}>Smt. Rajeshwari Reddy Scholar Convent</span>
+              </div>
+              <button 
+                onClick={() => setBrochureOpen(false)} 
+                style={{ background: "rgba(255,255,255,0.15)", border: "none", color: "#fff", width: 34, height: 34, borderRadius: "50%", cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Image Slider */}
+            <div style={{ position: "relative", background: "#0b0813", display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 0" }}>
+              
+              {/* Image */}
+              <img 
+                src={`/brochure_page_${brochurePage + 1}.jpg`} 
+                alt={`Brochure Page ${brochurePage + 1}`} 
+                style={{ maxHeight: "65vh", maxWidth: "100%", objectFit: "contain" }} 
+              />
+              
+              {/* Prev Button */}
+              <button 
+                onClick={() => setBrochurePage(prev => (prev > 0 ? prev - 1 : 4))}
+                style={{ 
+                  position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)",
+                  background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)",
+                  color: "#fff", width: 44, height: 44, borderRadius: "50%", cursor: "pointer",
+                  fontSize: 20, fontWeight: "bold", display: "flex", alignItems: "center", justifyContent: "center"
+                }}
+                onMouseOver={e => e.currentTarget.style.background = "rgba(255,255,255,0.25)"}
+                onMouseOut={e => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
+              >
+                ‹
+              </button>
+
+              {/* Next Button */}
+              <button 
+                onClick={() => setBrochurePage(prev => (prev < 4 ? prev + 1 : 0))}
+                style={{ 
+                  position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)",
+                  background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)",
+                  color: "#fff", width: 44, height: 44, borderRadius: "50%", cursor: "pointer",
+                  fontSize: 20, fontWeight: "bold", display: "flex", alignItems: "center", justifyContent: "center"
+                }}
+                onMouseOver={e => e.currentTarget.style.background = "rgba(255,255,255,0.25)"}
+                onMouseOut={e => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
+              >
+                ›
+              </button>
+
+            </div>
+
+            {/* Dot indicators & Actions */}
+            <div style={{ padding: "14px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(255,255,255,0.06)", background: "#151025" }}>
+              {/* Dots */}
+              <div style={{ display: "flex", gap: 8 }}>
+                {[0, 1, 2, 3, 4].map(idx => (
+                  <span 
+                    key={idx}
+                    onClick={() => setBrochurePage(idx)}
+                    style={{ 
+                      width: 10, height: 10, borderRadius: "50%", cursor: "pointer",
+                      background: brochurePage === idx ? "#FFB800" : "rgba(255,255,255,0.2)",
+                      transition: "all 0.2s"
+                    }}
+                  />
+                ))}
+              </div>
+              <a 
+                href={`/brochure_page_${brochurePage + 1}.jpg`} 
+                download={`brochure_page_${brochurePage + 1}.jpg`}
+                style={{ background: "#7b1fa2", color: "#fff", border: "none", padding: "8px 16px", borderRadius: 20, fontSize: 12, fontWeight: 700, textDecoration: "none", cursor: "pointer" }}
+              >
+                📥 Download Page
+              </a>
+            </div>
+
+          </div>
+        </div>
+      )}
 
     </div>
   );

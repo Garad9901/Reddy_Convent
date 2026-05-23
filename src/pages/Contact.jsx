@@ -1,13 +1,31 @@
 import { useState } from "react";
 import { SCHOOL } from "../App";
+import { saveContact } from "../firebase";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    if (!form.name || !form.phone || !form.message) {
+      setError("Please fill out all required fields.");
+      return;
+    }
+    
+    setError("");
+    setSubmitting(true);
+    try {
+      await saveContact(form);
+      setSent(true);
+    } catch (err) {
+      console.error("Contact save failed:", err);
+      setError("Failed to send message. Please try again or call the office.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -119,6 +137,11 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ padding: "28px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
+                {error && (
+                  <div style={{ background: "#fee2e2", border: "1px solid #fca5a5", borderRadius: 8, padding: "10px 12px", color: "#b91c1c", fontSize: 13, fontWeight: 600 }}>
+                    ⚠️ {error}
+                  </div>
+                )}
                 {[
                   { label: "Your Full Name *", key: "name", type: "text", placeholder: "Enter your name" },
                   { label: "Mobile Number *", key: "phone", type: "tel", placeholder: "10-digit mobile number" },
@@ -134,8 +157,8 @@ const Contact = () => {
                   <textarea rows={5} placeholder="Write your message or enquiry here..." required value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
                     style={{ width: "100%", padding: "11px 14px", fontSize: 14, border: "1.5px solid #e2e8f0", borderRadius: 8, background: "#f9fafb", outline: "none", fontFamily: "var(--font-b)", color: "#1e293b", resize: "vertical", boxSizing: "border-box" }} />
                 </div>
-                <button type="submit" style={{ background: "linear-gradient(135deg,#4a148c,#7b1fa2)", color: "#fff", border: "none", padding: "13px", borderRadius: 8, fontWeight: 800, fontSize: 15, cursor: "pointer" }}>
-                  Send Message →
+                <button type="submit" disabled={submitting} style={{ background: submitting ? "#a21caf" : "linear-gradient(135deg,#4a148c,#7b1fa2)", color: "#fff", border: "none", padding: "13px", borderRadius: 8, fontWeight: 800, fontSize: 15, cursor: submitting ? "not-allowed" : "pointer", opacity: submitting ? 0.8 : 1 }}>
+                  {submitting ? "Sending..." : "Send Message →"}
                 </button>
                 <p style={{ textAlign: "center", color: "#94a3b8", fontSize: 12, margin: 0 }}>
                   For faster response, call <strong style={{ color: "#7b1fa2" }}>{SCHOOL.phone3}</strong>

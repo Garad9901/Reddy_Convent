@@ -1,13 +1,31 @@
 import { useState } from "react";
 import { SCHOOL } from "../App";
+import { saveAdmission } from "../firebase";
 
 const Admissions = ({ setPage }) => {
   const [form, setForm] = useState({ name: "", parent: "", phone: "", class: "", village: "" });
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.name && form.phone) setSubmitted(true);
+    if (!form.name || !form.phone || !form.class || !form.parent) {
+      setError("Please fill out all required fields.");
+      return;
+    }
+    
+    setError("");
+    setSubmitting(true);
+    try {
+      await saveAdmission(form);
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Submission failed:", err);
+      setError("Failed to submit enquiry. Please try again or call the office.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const SCHEME_FEATURES = [
@@ -151,6 +169,11 @@ const Admissions = ({ setPage }) => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ padding: "24px 24px", display: "flex", flexDirection: "column", gap: 14 }}>
+                  {error && (
+                    <div style={{ background: "#fee2e2", border: "1px solid #fca5a5", borderRadius: 8, padding: "10px 12px", color: "#b91c1c", fontSize: 13, fontWeight: 600 }}>
+                      ⚠️ {error}
+                    </div>
+                  )}
                   {[
                     { label: "Student's Full Name *", key: "name", placeholder: "Enter full name", type: "text" },
                     { label: "Parent/Guardian Name *", key: "parent", placeholder: "Father's / Mother's name", type: "text" },
@@ -171,8 +194,8 @@ const Admissions = ({ setPage }) => {
                       {CLASSES_LIST.map(c => <option key={c} value={c}>{c}</option>)}
                     </select>
                   </div>
-                  <button type="submit" style={{ width: "100%", background: "linear-gradient(135deg,#4a148c,#7b1fa2)", color: "#fff", border: "none", padding: "13px", borderRadius: 7, fontWeight: 800, fontSize: 14.5, cursor: "pointer", marginTop: 6 }}>
-                    Submit Enquiry →
+                  <button type="submit" disabled={submitting} style={{ width: "100%", background: submitting ? "#a21caf" : "linear-gradient(135deg,#4a148c,#7b1fa2)", color: "#fff", border: "none", padding: "13px", borderRadius: 7, fontWeight: 800, fontSize: 14.5, cursor: submitting ? "not-allowed" : "pointer", marginTop: 6, opacity: submitting ? 0.8 : 1 }}>
+                    {submitting ? "Submitting..." : "Submit Enquiry →"}
                   </button>
                   <div style={{ textAlign: "center", color: "#64748b", fontSize: 12 }}>
                     OR call directly: <strong style={{ color: "#7b1fa2" }}>{SCHOOL.admissionPhone}</strong>

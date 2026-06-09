@@ -27,7 +27,7 @@ const NOTICES = [
 
 const TESTIMONIALS = [
   {
-    quote: "Smt. Rajeshwari Reddy Scholar Convent has changed how our children learn. The computer education and science lab sessions are very practical and helpful! We are highly satisfied.",
+    quote: "Rajeshwari Convent has changed how our children learn. The computer education and science lab sessions are very practical and helpful! We are highly satisfied.",
     author: "Mr. Anil Deshmukh",
     address: "Mouda, Nagpur Rural",
     role: "Parent of Grade 7 Student",
@@ -178,19 +178,19 @@ const Home = ({ setPage }) => {
               </div>
             </div>
 
-            {/* Right: Overlapping Photo Collage Frame */}
+            {/* Right: Real School Photo Collage */}
             <div style={{ position: "relative", height: 420, width: "100%" }} className="hide-mobile">
-              {/* Back Image (Entrance) */}
+              {/* Back Image — Annual Day Dignitaries */}
               <div 
                 style={{ 
                   position: "absolute", 
                   bottom: 20, 
                   left: 20, 
-                  width: "70%", 
-                  height: "70%", 
+                  width: "68%", 
+                  height: "68%", 
                   borderRadius: 16, 
                   overflow: "hidden", 
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
                   border: "4px solid #fff",
                   transform: "rotate(-3deg)",
                   zIndex: 2,
@@ -199,20 +199,20 @@ const Home = ({ setPage }) => {
                 onMouseOver={e => e.currentTarget.style.transform = "rotate(-1deg) scale(1.02)"}
                 onMouseOut={e => e.currentTarget.style.transform = "rotate(-3deg)"}
               >
-                <img src="/entrance.png" alt="Campus Entrance" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src="/annual_day_dignitaries.jpg" alt="13th Annual Day 2025 - Dignitaries" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
 
-              {/* Front Image (Building) */}
+              {/* Front Image — School Entrance Gate */}
               <div 
                 style={{ 
                   position: "absolute", 
                   top: 20, 
                   right: 20, 
-                  width: "75%", 
-                  height: "70%", 
+                  width: "72%", 
+                  height: "68%", 
                   borderRadius: 16, 
                   overflow: "hidden", 
-                  boxShadow: "0 15px 40px rgba(123,31,162,0.15)",
+                  boxShadow: "0 15px 40px rgba(123,31,162,0.18)",
                   border: "4px solid #fff",
                   transform: "rotate(3deg)",
                   zIndex: 3,
@@ -221,10 +221,10 @@ const Home = ({ setPage }) => {
                 onMouseOver={e => e.currentTarget.style.transform = "rotate(1deg) scale(1.02)"}
                 onMouseOut={e => e.currentTarget.style.transform = "rotate(3deg)"}
               >
-                <img src="/building.png" alt="Campus Main Building" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src="/gate_entrance_real.jpg" alt="School Entrance Gate — सुस्वागतम" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
 
-              {/* Asymmetrical Frame Overlay */}
+              {/* Badge overlay */}
               <div 
                 style={{
                   position: "absolute",
@@ -241,7 +241,7 @@ const Home = ({ setPage }) => {
                   transform: "rotate(2deg)"
                 }}
               >
-                📍 Kodamendhi Campus
+                🏆 13th Annual Day 2025
               </div>
             </div>
 
@@ -519,35 +519,72 @@ const Home = ({ setPage }) => {
         </div>
       </div>
 
-      {/* ══════ GALLERY SNAPSHOTS SECTION ══════ */}
+      {/* ══════ ANNUAL DAY 2025 HIGHLIGHT SECTION ══════ */}
       <div style={{ background: "#fff", padding: "70px 0", borderTop: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 24px" }}>
           <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <span className="badge" style={{ background: "#fdf4ff", color: "#7b1fa2", borderColor: "#e9d5ff" }}>Visual Showcase</span>
-            <h2 style={{ fontFamily: "var(--font-h)", fontSize: 32, fontWeight: 800, color: "#0f172a", marginTop: 14 }}>Campus Life in Focus</h2>
-            <div style={{ width: 60, height: 3, background: "#7b1fa2", borderRadius: 2, margin: "14px auto" }} />
+            <span className="badge" style={{ background: "#fff8e6", color: "#D4A017", borderColor: "#fde68a" }}>🏆 Real Moments</span>
+            <h2 style={{ fontFamily: "var(--font-h)", fontSize: 32, fontWeight: 800, color: "#0f172a", marginTop: 14 }}>13<sup>th</sup> Annual Day Function — 2025</h2>
+            <p style={{ color: "#64748b", fontSize: 15, maxWidth: 600, margin: "12px auto 0" }}>Rajeshwari Convent | Educational Campus, Kodamendhi</p>
+            <div style={{ width: 60, height: 3, background: "#FFB800", borderRadius: 2, margin: "14px auto" }} />
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
-            {[
-              { src: "/building.png", label: "School Building", desc: "Our 3-storey campus at Kodamendhi" },
-              { src: "/entrance.png", label: "School Entrance", desc: "Welcoming entrance with steps and greenery" },
-              { src: "/assembly.png", label: "Morning Assembly", desc: "Students in purple uniforms at assembly" },
-              { src: "/yoga.png", label: "Yoga & Wellness", desc: "Daily yoga practice for holistic development" },
-            ].map((p, i) => (
-              <div key={i} className="card-hover" style={{ borderRadius: 10, overflow: "hidden", position: "relative", height: 210, cursor: "pointer", boxShadow: "0 2px 12px rgba(0,0,0,0.06)", border: "1px solid #cbd5e1" }} onClick={() => setPage("Gallery")}>
-                <img src={p.src} alt={p.label} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(transparent 50%, rgba(15,23,42,0.85))" }} />
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px" }}>
-                  <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: 0.5 }}>{p.label}</div>
-                  <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 12, marginTop: 2 }}>{p.desc}</div>
-                </div>
+          {/* 5-photo mosaic */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "240px 240px", gap: 14 }}>
+            {/* Dignitaries - large */}
+            <div className="card-hover" style={{ gridColumn: "1/2", gridRow: "1/2", borderRadius: 12, overflow: "hidden", position: "relative", cursor: "pointer", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} onClick={() => setPage("Gallery")}>
+              <img src="/annual_day_dignitaries.jpg" alt="13th Annual Day Dignitaries" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e=>e.target.style.transform="scale(1.05)"} onMouseOut={e=>e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(transparent 50%, rgba(15,23,42,0.88))" }} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Annual Day 2025</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Dignitaries & Management</div>
               </div>
-            ))}
+            </div>
+
+            {/* Gate Entrance */}
+            <div className="card-hover" style={{ gridColumn: "2/3", gridRow: "1/2", borderRadius: 12, overflow: "hidden", position: "relative", cursor: "pointer", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} onClick={() => setPage("Gallery")}>
+              <img src="/gate_entrance_real.jpg" alt="School Entrance Gate" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e=>e.target.style.transform="scale(1.05)"} onMouseOut={e=>e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(transparent 50%, rgba(15,23,42,0.88))" }} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Campus</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>सुस्वागतम — Kodamendhi Gate</div>
+              </div>
+            </div>
+
+            {/* Award Police */}
+            <div className="card-hover" style={{ gridColumn: "3/4", gridRow: "1/2", borderRadius: 12, overflow: "hidden", position: "relative", cursor: "pointer", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} onClick={() => setPage("Gallery")}>
+              <img src="/award_ceremony_police.jpg" alt="Award Ceremony Police" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e=>e.target.style.transform="scale(1.05)"} onMouseOut={e=>e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(transparent 50%, rgba(15,23,42,0.88))" }} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Award Ceremony</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Police Honour to Student</div>
+              </div>
+            </div>
+
+            {/* Night Crowd - wide */}
+            <div className="card-hover" style={{ gridColumn: "1/3", gridRow: "2/3", borderRadius: 12, overflow: "hidden", position: "relative", cursor: "pointer", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} onClick={() => setPage("Gallery")}>
+              <img src="/annual_day_crowd_night.jpg" alt="Annual Day Night Crowd" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e=>e.target.style.transform="scale(1.04)"} onMouseOut={e=>e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(transparent 55%, rgba(15,23,42,0.88))" }} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Annual Day 2025</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 14, marginTop: 2 }}>Grand Community Gathering — Night Celebrations</div>
+              </div>
+            </div>
+
+            {/* Traditional Award */}
+            <div className="card-hover" style={{ gridColumn: "3/4", gridRow: "2/3", borderRadius: 12, overflow: "hidden", position: "relative", cursor: "pointer", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} onClick={() => setPage("Gallery")}>
+              <img src="/award_ceremony_traditional.jpg" alt="Traditional Award" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e=>e.target.style.transform="scale(1.05)"} onMouseOut={e=>e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(transparent 50%, rgba(15,23,42,0.88))" }} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "16px" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Award Ceremony</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Cultural Honour</div>
+              </div>
+            </div>
           </div>
+
           <div style={{ textAlign: "center", marginTop: 32 }}>
             <button onClick={() => setPage("Gallery")} style={{ background: "linear-gradient(135deg,#7b1fa2,#9c27b0)", color: "#fff", border: "none", padding: "12px 30px", borderRadius: 30, fontWeight: 700, fontSize: 13.5, cursor: "pointer", boxShadow: "0 4px 12px rgba(123,31,162,0.2)" }}>
-              View Full Gallery →
+              View Full Photo Gallery →
             </button>
           </div>
         </div>
@@ -604,7 +641,7 @@ const Home = ({ setPage }) => {
             <div style={{ background: "linear-gradient(135deg, #4a148c, #7b1fa2)", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
                 <h3 style={{ color: "#fff", fontSize: 15, fontWeight: 800 }}>📖 School Brochure — Page {brochurePage + 1} of 5</h3>
-                <span style={{ color: "#FFB800", fontSize: 10.5, fontWeight: 700 }}>Smt. Rajeshwari Reddy Scholar Convent</span>
+                <span style={{ color: "#FFB800", fontSize: 10.5, fontWeight: 700 }}>Rajeshwari Convent</span>
               </div>
               <button 
                 onClick={() => setBrochureOpen(false)} 

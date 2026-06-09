@@ -50,7 +50,7 @@ const Contact = () => {
                 <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <span style={{ fontSize: 22, flexShrink: 0 }}>🏫</span>
                   <div>
-                    <div style={{ fontWeight: 800, color: "#1e293b", fontSize: 15 }}>Smt. Rajeshwari Reddy Scholar Convent &amp; Junior College</div>
+                    <div style={{ fontWeight: 800, color: "#1e293b", fontSize: 15 }}>Rajeshwari Convent &amp; Junior College</div>
                     <div style={{ color: "#64748b", fontSize: 13.5, marginTop: 2 }}>{SCHOOL.address}</div>
                     <div style={{ color: "#7b1fa2", fontSize: 12.5, marginTop: 3, fontWeight: 600 }}>UDISE: {SCHOOL.udise} | Index: {SCHOOL.index}</div>
                   </div>

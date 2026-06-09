@@ -6,7 +6,7 @@ const Chatbot = () => {
   const [msgs, setMsgs] = useState([
     {
       from: "counselor",
-      text: "👋 Namaste! Welcome to Smt. Rajeshwari Reddy Scholar Convent, Kodamendhi.\n\nI am Mrs. Sharda Garad, your Parent Help Desk counselor. How can I assist you with your child's education today?"
+      text: "👋 Namaste! Welcome to Rajeshwari Convent, Kodamendhi.\n\nI am Mrs. Sharda Garad, your Parent Help Desk counselor. How can I assist you with your child's education today?"
     }
   ]);
   const [input, setInput] = useState("");

@@ -31,7 +31,7 @@ const About = () => {
           </h1>
           <div className="gold-line" style={{ margin: "18px auto", background: "linear-gradient(90deg, #FFB800, #D4A017)" }} />
           <p className="section-sub" style={{ maxWidth: 680, margin: "0 auto", color: "rgba(255,255,255,0.75)" }}>
-            Smt. Rajeshwari Reddy Scholar Convent & Junior College — a Govt. Recognized, CBSE-affiliated institution providing quality education from Nursery to 12th Std. in Kodamendhi.
+            Rajeshwari Convent & Junior College — a Govt. Recognized, CBSE-affiliated institution providing quality education from Nursery to 12th Std. in Kodamendhi.
           </p>
         </div>
       </div>
@@ -51,7 +51,7 @@ const About = () => {
               <div style={{ width: 60, height: 3, background: "#7b1fa2", borderRadius: 2, margin: "16px 0" }} />
 
               <p style={{ color: "#475569", fontSize: 15, lineHeight: 1.85, marginBottom: 18 }}>
-                Smt. Rajeshwari Reddy Scholar Convent was established with a clear mission — to bring <strong style={{ color: "#4a148c" }}>international-standard education</strong> to the children of Kodamendhi and surrounding villages. The school is a <strong style={{ color: "#4a148c" }}>Self-Finance, Government Recognized</strong> institution committed to nurturing young minds.
+                Rajeshwari Convent was established with a clear mission — to bring <strong style={{ color: "#4a148c" }}>international-standard education</strong> to the children of Kodamendhi and surrounding villages. The school is a <strong style={{ color: "#4a148c" }}>Self-Finance, Government Recognized</strong> institution committed to nurturing young minds.
               </p>
 
               <p style={{ color: "#475569", fontSize: 15, lineHeight: 1.85, marginBottom: 18 }}>

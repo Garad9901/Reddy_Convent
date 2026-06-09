@@ -57,7 +57,7 @@ const Admissions = ({ setPage }) => {
         <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>Academic Year 2026–27</div>
         <h1 style={{ fontFamily: "var(--font-h)", color: "#fff", fontSize: "clamp(26px,4vw,46px)", fontWeight: 900, marginBottom: 10 }}>Admissions Open</h1>
         <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 16, marginBottom: 14 }}>
-          Smt. Rajeshwari Reddy Scholar Convent &amp; Junior College, Kodamendhi
+          Rajeshwari Convent &amp; Junior College, Kodamendhi
         </p>
         <div style={{ color: "#FFB800", fontFamily: "var(--font-h)", fontStyle: "italic", fontSize: 16 }}>
           "Start Right..... Future Bright !"

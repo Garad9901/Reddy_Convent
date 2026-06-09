@@ -13,7 +13,7 @@ const AdmissionsPopup = ({ onClose, onNavigate }) => {
             त्रिवर्षीय शिक्षा समृद्धि योजना
           </h2>
           <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 12.5, marginTop: 5 }}>
-            Smt. Rajeshwari Reddy Scholar Convent, Kodamendhi
+            Rajeshwari Convent, Kodamendhi
           </p>
         </div>
 

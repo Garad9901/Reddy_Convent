@@ -125,7 +125,7 @@ const Faculty = () => {
             {/* Letterhead Header */}
             <div style={{ borderBottom: "2px solid #7b1fa2", paddingBottom: 24, marginBottom: 30, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 20 }}>
               <div>
-                <h2 style={{ fontFamily: "var(--font-h)", color: "#4a148c", fontSize: 26, fontWeight: 900 }}>SMT. RAJESHWARI REDDY SCHOLAR CONVENT</h2>
+                <h2 style={{ fontFamily: "var(--font-h)", color: "#4a148c", fontSize: 26, fontWeight: 900 }}>Rajeshwari Convent</h2>
                 <div style={{ color: "#64748b", fontSize: 13, fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5, marginTop: 4 }}>
                   📍 Kodamendhi Campus, Nagpur District, Maharashtra
                 </div>
@@ -145,7 +145,7 @@ const Faculty = () => {
                     Dear Parents, Guardians, and Scholars,
                   </p>
                   <p style={{ marginBottom: 16 }}>
-                    Welcome to Smt. Rajeshwari Reddy Scholar Convent. Our school is built on the belief that every child deserves a "Temple of Education" that is nurturing, digitally advanced, and safe. Since our establishment in 2000, we have stayed committed to providing top-quality CBSE-aligned education in the heart of rural Nagpur.
+                    Welcome to Rajeshwari Convent. Our school is built on the belief that every child deserves a "Temple of Education" that is nurturing, digitally advanced, and safe. Since our establishment in 2000, we have stayed committed to providing top-quality CBSE-aligned education in the heart of rural Nagpur.
                   </p>
                   <p style={{ marginBottom: 16 }}>
                     We believe in starting right. This is why our teachers focus heavily on conceptual clarity, active visual smart learning, and building future-ready technological skills. Through our custom AI, IoT, and Robotics labs, children learn to build and program functional electronic models early in standard, sparking deep creative confidence.
@@ -155,7 +155,7 @@ const Faculty = () => {
                   </p>
                   <div style={{ marginTop: 24 }}>
                     <div style={{ fontStyle: "italic", fontFamily: "var(--font-h)", fontSize: 18, color: "#4a148c", fontWeight: 700 }}>Management &amp; Leadership</div>
-                    <div style={{ fontSize: 12, color: "#64748b", fontWeight: 700, textTransform: "uppercase", marginTop: 4 }}>Smt. Rajeshwari Reddy Scholar Convent</div>
+                    <div style={{ fontSize: 12, color: "#64748b", fontWeight: 700, textTransform: "uppercase", marginTop: 4 }}>Rajeshwari Convent</div>
                   </div>
                 </div>
 

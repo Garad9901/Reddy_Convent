@@ -2,8 +2,15 @@ import { useState, useEffect } from "react";
 import { SCHOOL } from "../App";
 
 const PHOTOS = [
+  // ── Real School Photos ──────────────────────────────────────────
+  { src: "/gate_entrance_real.jpg", title: "School Entrance Gate", cat: "Campus", desc: "सुस्वागतम — Our iconic welcome gate. Pay Back to Society. घर से दूर, एक सुंदर घर… Kodamendhi campus entrance with Udaan Sport Academy." },
+  { src: "/annual_day_dignitaries.jpg", title: "13th Annual Day — Dignitaries", cat: "Annual Day 2025", desc: "Rajeshwari Convent — 13th Annual Day Function 2025. Dignitaries including police officials and management seated on stage." },
+  { src: "/annual_day_crowd_night.jpg", title: "Annual Day — Grand Audience", cat: "Annual Day 2025", desc: "Hundreds of parents, students and community members gathered for the 13th Annual Day 2025 night celebrations at Kodamendhi campus." },
+  { src: "/award_ceremony_police.jpg", title: "Award Ceremony — Police Honour", cat: "Annual Day 2025", desc: "A student receiving a sapling award from the school management and police dignitary at the 13th Annual Day Function 2025." },
+  { src: "/award_ceremony_traditional.jpg", title: "Award Ceremony — Cultural Honour", cat: "Annual Day 2025", desc: "A student in traditional Maharashtrian attire receiving an award from school management and a distinguished guest at Annual Day 2025." },
+  // ── Campus ──────────────────────────────────────────────────────
   { src: "/building.png", title: "School Building", cat: "Campus", desc: "Our main school building — Kodamendhi" },
-  { src: "/entrance.png", title: "School Entrance", cat: "Campus", desc: "Grand entrance with steps and greenery" },
+  { src: "/entrance.png", title: "Campus View", cat: "Campus", desc: "Grand campus view with steps and greenery" },
   { src: "/assembly.png", title: "Morning Assembly", cat: "Students", desc: "Daily morning assembly of students in purple uniforms" },
   { src: "/yoga.png", title: "Yoga Practice", cat: "Sports", desc: "Students practicing yoga for holistic wellness" },
   { src: "/cultural.png", title: "Cultural Program", cat: "Events", desc: "Annual cultural celebration with tricolor decorations" },
@@ -12,14 +19,14 @@ const PHOTOS = [
   { src: "/classroom.png", title: "Smart Classroom", cat: "Facilities", desc: "Digital interactive classrooms" },
   { src: "/robotics.png", title: "Robotics Lab", cat: "Facilities", desc: "Students building robots and learning AI" },
   { src: "/sports.png", title: "Sports Ground", cat: "Sports", desc: "Open grounds for cricket, football and athletics" },
-  { src: "/brochure_page_1.jpg", title: "Brochure - Front Cover", cat: "Brochure", desc: "Front cover of Smt. Rajeshwari Reddy Scholar Convent brochure" },
+  { src: "/brochure_page_1.jpg", title: "Brochure - Front Cover", cat: "Brochure", desc: "Front cover of Rajeshwari Convent brochure" },
   { src: "/brochure_page_2.jpg", title: "Brochure - Leadership & Vision", cat: "Brochure", desc: "Principal's message, management team, and academic goals" },
   { src: "/brochure_page_3.jpg", title: "Brochure - Mission IAS & NDA", cat: "Brochure", desc: "Milestones for Civil Services foundation and Defence Academy courses" },
   { src: "/brochure_page_4.jpg", title: "Brochure - Facilities & Sports", cat: "Brochure", desc: "Outline of smart classrooms, science labs, and athletics" },
   { src: "/brochure_page_5.jpg", title: "Brochure - Admissions & Scheme", cat: "Brochure", desc: "Details on admissions enrollment and the three-year fee scheme" },
 ];
 
-const CATS = ["All", "Campus", "Students", "Facilities", "Sports", "Events", "Brochure"];
+const CATS = ["All", "Annual Day 2025", "Campus", "Students", "Facilities", "Sports", "Events", "Brochure"];
 
 const Gallery = () => {
   const [cat, setCat] = useState("All");
@@ -40,6 +47,7 @@ const Gallery = () => {
   }, []);
 
   const filtered = cat === "All" ? PHOTOS : PHOTOS.filter(p => p.cat === cat);
+  const annualDayPhotos = PHOTOS.filter(p => p.cat === "Annual Day 2025");
 
   return (
     <div style={{ paddingTop: 90, background: "#f4f6fb", minHeight: "100vh" }}>
@@ -49,6 +57,91 @@ const Gallery = () => {
         <h1 style={{ fontFamily: "var(--font-h)", color: "#fff", fontSize: "clamp(26px,4vw,44px)", fontWeight: 900, marginBottom: 8 }}>Campus Gallery</h1>
         <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 15 }}>{SCHOOL.nameShort}, {SCHOOL.location} — Life in Pictures</p>
       </div>
+
+      {/* ══════ FEATURED: 13th ANNUAL DAY 2025 SECTION ══════ */}
+      {(cat === "All" || cat === "Annual Day 2025") && (
+        <div style={{ maxWidth: 1300, margin: "0 auto", padding: "48px 24px 0" }}>
+          <div style={{ marginBottom: 32 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 8 }}>
+              <div style={{ width: 4, height: 36, background: "linear-gradient(#FFB800,#7b1fa2)", borderRadius: 2 }} />
+              <div>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: 2, marginBottom: 2 }}>🏆 Featured Event</div>
+                <h2 style={{ fontFamily: "var(--font-h)", fontSize: "clamp(20px,3vw,30px)", fontWeight: 900, color: "#0f172a", margin: 0 }}>13<sup>th</sup> Annual Day Function — 2025</h2>
+              </div>
+            </div>
+            <p style={{ color: "#64748b", fontSize: 14, marginLeft: 18, maxWidth: 700 }}>
+              Rajeshwari Convent celebrated its 13th Annual Day with a spectacular event — dignitaries, cultural performances, award ceremonies, and hundreds of community members attending.
+            </p>
+          </div>
+
+          {/* Featured 5-photo mosaic layout */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "280px 280px", gap: 12, marginBottom: 48 }}>
+            {/* Large left - Stage/Dignitaries */}
+            <div
+              style={{ gridColumn: "1 / 2", gridRow: "1 / 2", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+              onClick={() => setSelected(annualDayPhotos[1])}
+            >
+              <img src={annualDayPhotos[1]?.src} alt="Annual Day Dignitaries" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Annual Day 2025</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Dignitaries on Stage</div>
+              </div>
+            </div>
+
+            {/* Top center - Gate Entrance */}
+            <div
+              style={{ gridColumn: "2 / 3", gridRow: "1 / 2", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+              onClick={() => setSelected(annualDayPhotos[0])}
+            >
+              <img src={annualDayPhotos[0]?.src} alt="School Gate" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Campus</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>सुस्वागतम — School Gate</div>
+              </div>
+            </div>
+
+            {/* Top right - Award Police */}
+            <div
+              style={{ gridColumn: "3 / 4", gridRow: "1 / 2", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+              onClick={() => setSelected(annualDayPhotos[3])}
+            >
+              <img src={annualDayPhotos[3]?.src} alt="Award Police" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Award Ceremony</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Police Honour</div>
+              </div>
+            </div>
+
+            {/* Bottom left wide - Night Crowd */}
+            <div
+              style={{ gridColumn: "1 / 3", gridRow: "2 / 3", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+              onClick={() => setSelected(annualDayPhotos[2])}
+            >
+              <img src={annualDayPhotos[2]?.src} alt="Night Crowd" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Annual Day 2025</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Grand Audience — Night Celebrations</div>
+              </div>
+            </div>
+
+            {/* Bottom right - Traditional Award */}
+            <div
+              style={{ gridColumn: "3 / 4", gridRow: "2 / 3", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
+              onClick={() => setSelected(annualDayPhotos[4])}
+            >
+              <img src={annualDayPhotos[4]?.src} alt="Traditional Award" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
+                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Award Ceremony</div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Cultural Honour</div>
+              </div>
+            </div>
+          </div>
+
+          {cat === "Annual Day 2025" && (
+            <div style={{ height: 1, background: "#e2e8f0", margin: "0 0 40px" }} />
+          )}
+        </div>
+      )}
 
       <div style={{ maxWidth: 1300, margin: "0 auto", padding: "40px 24px" }}>
         

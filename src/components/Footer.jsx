@@ -98,7 +98,7 @@ const Footer = ({ setPage }) => {
 
       {/* Bottom strip */}
       <div style={{ padding: "14px 24px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10, fontSize: 12, color: "rgba(255,255,255,0.25)", maxWidth: 1300, margin: "0 auto" }}>
-        <span>© {year} Smt. Rajeshwari Reddy Scholar Convent &amp; Junior College, Kodamendhi. All Rights Reserved.</span>
+        <span>© {year} Rajeshwari Convent &amp; Junior College, Kodamendhi. All Rights Reserved.</span>
         <div style={{ display: "flex", gap: 16 }}>
           <span style={{ cursor: "pointer" }}>Privacy Policy</span>
           <span style={{ cursor: "pointer" }}>Sitemap</span>

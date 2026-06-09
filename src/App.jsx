@@ -17,8 +17,8 @@ import Contact from "./pages/Contact";
 
 // Real school data from brochure
 export const SCHOOL = {
-  name: "Smt. Rajeshwari Reddy Scholar Convent",
-  nameShort: "S.R.R. Scholar Convent",
+  name: "Rajeshwari Convent",
+  nameShort: "Rajeshwari Convent",
   sub: "& Junior College",
   location: "Kodamendhi",
   district: "Nagpur District, Maharashtra",

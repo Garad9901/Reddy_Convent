@@ -6,7 +6,7 @@ const FACILITIES_DATA = [
     icon: "🏫", 
     name: "Multi-Storey Campus Building", 
     desc: "A modern, spacious, multi-storey brick and concrete building designed for academic comfort and student safety.",
-    fullDesc: "Smt. Rajeshwari Reddy Scholar Convent features a grand multi-storey main school building at Kodamendhi. Designed with bright, ventilated corridors, secure entryways, and modern earthquake-resistant concrete construction, our campus provides an inspiring and safe environment for learning. The campus architecture includes dedicated sections for primary, middle, secondary, and junior college classrooms.",
+    fullDesc: "Rajeshwari Convent features a grand multi-storey main school building at Kodamendhi. Designed with bright, ventilated corridors, secure entryways, and modern earthquake-resistant concrete construction, our campus provides an inspiring and safe environment for learning. The campus architecture includes dedicated sections for primary, middle, secondary, and junior college classrooms.",
     specs: ["Multi-storey concrete construction", "Secure entrance and exit pathways", "Natural ventilation and lighting", "Safe, child-friendly layout"]
   },
   { 
@@ -34,7 +34,7 @@ const FACILITIES_DATA = [
     icon: "📚", 
     name: "School Library Hub", 
     desc: "A peaceful space housing an extensive collection of textbooks, reference works, literature, and digital learning assets.",
-    fullDesc: "The school library at Smt. Rajeshwari Reddy Scholar Convent serves as a sanctuary for readers. It houses thousands of physical volumes, encyclopedias, competitive exam materials for the Mission IAS foundation, and fiction books. Cozy reading tables invite students to read and engage in self-study.",
+    fullDesc: "The school library at Rajeshwari Convent serves as a sanctuary for readers. It houses thousands of physical volumes, encyclopedias, competitive exam materials for the Mission IAS foundation, and fiction books. Cozy reading tables invite students to read and engage in self-study.",
     specs: ["Diverse physical book catalog", "Mission IAS foundation references", "Comfortable group study tables", "Periodicals, daily newspapers, and magazines"]
   },
   { 

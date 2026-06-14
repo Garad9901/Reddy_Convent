@@ -177,7 +177,7 @@ const Events = () => {
   );
 
   return (
-    <div style={{ paddingTop: 74 }}>
+    <div style={{ paddingTop: 86 }}>
       
       {/* ─── HEADER BANNER ─── */}
       <div 

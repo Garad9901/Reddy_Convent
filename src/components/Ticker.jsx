@@ -14,7 +14,7 @@ const NOTICES = [
 const Ticker = () => {
   const doubled = [...NOTICES, ...NOTICES];
   return (
-    <div style={{ background: "linear-gradient(90deg, #7b1fa2, #6a1b9a, #4a148c)", padding: "8px 0", marginTop: 90, overflow: "hidden", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+    <div style={{ background: "linear-gradient(90deg, #7b1fa2, #6a1b9a, #4a148c)", padding: "8px 0", marginTop: "clamp(82px, 12vw, 90px)", overflow: "hidden", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
       <div style={{ display: "flex", gap: 80, animation: "ticker 45s linear infinite", whiteSpace: "nowrap", width: "max-content" }}
         onMouseOver={e => e.currentTarget.style.animationPlayState = "paused"}
         onMouseOut={e => e.currentTarget.style.animationPlayState = "running"}>

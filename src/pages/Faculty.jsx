@@ -74,7 +74,7 @@ const Faculty = () => {
   });
 
   return (
-    <div style={{ paddingTop: 74, background: "#f8fafc" }}>
+    <div style={{ paddingTop: 86, background: "#f8fafc" }}>
       
       {/* ─── HEADER BANNER ─── */}
       <div 

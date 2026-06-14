@@ -3,7 +3,7 @@ import { SCHOOL } from "../App";
 
 const About = () => {
   return (
-    <div style={{ paddingTop: 74 }}>
+    <div style={{ paddingTop: 86 }}>
 
       {/* ─── ABOUT HERO SECTION ─── */}
       <div

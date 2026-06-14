@@ -465,14 +465,18 @@ label {
     display: none !important;
   }
   .show-mobile {
-    display: block !important;
+    display: flex !important;
   }
   .section-title {
-    font-size: 28px;
+    font-size: 26px;
   }
   .grid-auto {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .btn-primary, .btn-outline {
+    padding: 11px 22px;
+    font-size: 14px;
   }
 }
 

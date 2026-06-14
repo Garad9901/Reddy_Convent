@@ -64,8 +64,8 @@ const Admissions = ({ setPage }) => {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 360px", gap: 32, alignItems: "start" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 16px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 28, alignItems: "start" }}>
 
           {/* Left column */}
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
@@ -112,7 +112,7 @@ const Admissions = ({ setPage }) => {
                 <p style={{ color: "#334155", fontSize: 14.5, lineHeight: 1.75, marginBottom: 20 }}>
                   <strong style={{ color: "#4a148c" }}>3 साल की फीस एक साथ भरने पर</strong> — किताबें और यूनिफार्म बिल्कुल मुफ्त। एक बार भुगतान करें और 3 साल तक निश्चिन्त रहें। यह एक पे-सोसाइटी स्कीम है जहाँ शिक्षा, तकनीक, और नवाचार एक साथ मिलते हैं।
                 </p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 20 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 240px), 1fr))", gap: 12, marginBottom: 20 }}>
                   {SCHEME_FEATURES.map((f, i) => (
                     <div key={i} style={{ background: "#fdf4ff", border: "1px solid #e9d5ff", borderRadius: 8, padding: "14px 14px", display: "flex", gap: 10, alignItems: "flex-start" }}>
                       <span style={{ fontSize: 22, flexShrink: 0 }}>{f.icon}</span>

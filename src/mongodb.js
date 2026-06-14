@@ -6,7 +6,7 @@
  * Includes a robust, crash-free LocalStorage mock fallback when the server is offline or not yet deployed.
  */
 
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 /**
  * Checks if the backend Express server is online

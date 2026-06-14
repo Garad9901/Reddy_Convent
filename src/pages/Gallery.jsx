@@ -50,7 +50,7 @@ const Gallery = () => {
   const annualDayPhotos = PHOTOS.filter(p => p.cat === "Annual Day 2025");
 
   return (
-    <div style={{ paddingTop: 90, background: "#f4f6fb", minHeight: "100vh" }}>
+    <div style={{ paddingTop: 86, background: "#f4f6fb", minHeight: "100vh" }}>
       
       {/* Header */}
       <div style={{ background: "linear-gradient(135deg,#4a148c,#7b1fa2)", padding: "48px 24px 38px", textAlign: "center" }}>
@@ -74,67 +74,25 @@ const Gallery = () => {
             </p>
           </div>
 
-          {/* Featured 5-photo mosaic layout */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "280px 280px", gap: 12, marginBottom: 48 }}>
-            {/* Large left - Stage/Dignitaries */}
-            <div
-              style={{ gridColumn: "1 / 2", gridRow: "1 / 2", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
-              onClick={() => setSelected(annualDayPhotos[1])}
-            >
-              <img src={annualDayPhotos[1]?.src} alt="Annual Day Dignitaries" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
-                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Annual Day 2025</div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Dignitaries on Stage</div>
+          {/* Featured responsive photo grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 280px), 1fr))", gap: 12, marginBottom: 48 }}>
+            {[
+              { src: annualDayPhotos[1]?.src, alt: "Annual Day Dignitaries", cat: "Annual Day 2025", label: "Dignitaries on Stage", photo: annualDayPhotos[1] },
+              { src: annualDayPhotos[0]?.src, alt: "School Gate", cat: "Campus", label: "सुस्वागतम — School Gate", photo: annualDayPhotos[0] },
+              { src: annualDayPhotos[3]?.src, alt: "Award Police", cat: "Award Ceremony", label: "Police Honour", photo: annualDayPhotos[3] },
+              { src: annualDayPhotos[2]?.src, alt: "Night Crowd", cat: "Annual Day 2025", label: "Grand Audience — Night Celebrations", photo: annualDayPhotos[2] },
+              { src: annualDayPhotos[4]?.src, alt: "Traditional Award", cat: "Award Ceremony", label: "Cultural Honour", photo: annualDayPhotos[4] },
+            ].map((item, idx) => (
+              <div key={idx}
+                style={{ borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)", height: 200 }}
+                onClick={() => setSelected(item.photo)}>
+                <img src={item.src} alt={item.alt} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
+                  <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>{item.cat}</div>
+                  <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>{item.label}</div>
+                </div>
               </div>
-            </div>
-
-            {/* Top center - Gate Entrance */}
-            <div
-              style={{ gridColumn: "2 / 3", gridRow: "1 / 2", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
-              onClick={() => setSelected(annualDayPhotos[0])}
-            >
-              <img src={annualDayPhotos[0]?.src} alt="School Gate" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
-                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Campus</div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>सुस्वागतम — School Gate</div>
-              </div>
-            </div>
-
-            {/* Top right - Award Police */}
-            <div
-              style={{ gridColumn: "3 / 4", gridRow: "1 / 2", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
-              onClick={() => setSelected(annualDayPhotos[3])}
-            >
-              <img src={annualDayPhotos[3]?.src} alt="Award Police" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
-                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Award Ceremony</div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Police Honour</div>
-              </div>
-            </div>
-
-            {/* Bottom left wide - Night Crowd */}
-            <div
-              style={{ gridColumn: "1 / 3", gridRow: "2 / 3", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
-              onClick={() => setSelected(annualDayPhotos[2])}
-            >
-              <img src={annualDayPhotos[2]?.src} alt="Night Crowd" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
-                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Annual Day 2025</div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Grand Audience — Night Celebrations</div>
-              </div>
-            </div>
-
-            {/* Bottom right - Traditional Award */}
-            <div
-              style={{ gridColumn: "3 / 4", gridRow: "2 / 3", borderRadius: 12, overflow: "hidden", cursor: "pointer", position: "relative", boxShadow: "0 4px 20px rgba(0,0,0,0.12)" }}
-              onClick={() => setSelected(annualDayPhotos[4])}
-            >
-              <img src={annualDayPhotos[4]?.src} alt="Traditional Award" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.target.style.transform="scale(1.04)"} onMouseOut={e => e.target.style.transform="scale(1)"} />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 16px", background: "linear-gradient(transparent, rgba(15,23,42,0.88))" }}>
-                <div style={{ color: "#FFB800", fontWeight: 800, fontSize: 10, textTransform: "uppercase", letterSpacing: 1 }}>Award Ceremony</div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 13, marginTop: 2 }}>Cultural Honour</div>
-              </div>
-            </div>
+            ))}
           </div>
 
           {cat === "Annual Day 2025" && (

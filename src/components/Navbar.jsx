@@ -17,17 +17,17 @@ const Navbar = ({ page, setPage }) => {
   return (
     <>
       {/* Top info strip */}
-      <div style={{ background: "#7b1fa2", padding: "5px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 4 }}>
-        <div style={{ color: "rgba(255,255,255,0.9)", fontSize: 11.5, fontWeight: 500 }}>
-          📞 {SCHOOL.phone1} | {SCHOOL.phone2} &nbsp;|&nbsp; ✉️ {SCHOOL.email}
+      <div style={{ background: "#7b1fa2", padding: "5px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 4 }}>
+        <div style={{ color: "rgba(255,255,255,0.9)", fontSize: 11, fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "100%" }}>
+          📞 {SCHOOL.phone1} &nbsp;|&nbsp; ✉️ {SCHOOL.email}
         </div>
-        <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 11, fontWeight: 600 }}>
-          UDISE: {SCHOOL.udise} &nbsp;|&nbsp; Index: {SCHOOL.index} &nbsp;|&nbsp; {SCHOOL.recognition}
+        <div className="hide-mobile" style={{ color: "rgba(255,255,255,0.8)", fontSize: 11, fontWeight: 600, whiteSpace: "nowrap" }}>
+          UDISE: {SCHOOL.udise} &nbsp;|&nbsp; {SCHOOL.recognition}
         </div>
       </div>
 
       <nav style={{
-        position: "fixed", top: 30, left: 0, right: 0, zIndex: 1000,
+        position: "fixed", top: 26, left: 0, right: 0, zIndex: 1000,
         background: navBg,
         backdropFilter: "blur(12px)",
         boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.3)" : "none",
@@ -81,7 +81,7 @@ const Navbar = ({ page, setPage }) => {
           </div>
 
           <button className="show-mobile" onClick={() => setMobileOpen(!mobileOpen)}
-            style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "#fff", fontSize: 20, width: 40, height: 40, borderRadius: 8, cursor: "pointer", display: "none", alignItems: "center", justifyContent: "center" }}>
+            style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "#fff", fontSize: 20, width: 40, height: 40, borderRadius: 8, cursor: "pointer", alignItems: "center", justifyContent: "center" }}>
             {mobileOpen ? "✕" : "☰"}
           </button>
         </div>

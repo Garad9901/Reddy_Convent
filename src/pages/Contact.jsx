@@ -37,8 +37,8 @@ const Contact = () => {
         <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 15 }}>We're here to help — reach out anytime</p>
       </div>
 
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "start" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "40px 16px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 28, alignItems: "start" }}>
 
           {/* Contact Info */}
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
